@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Demo - Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>WebStore</h1>
+    <nav>
+      <ul>
+        <li><a href="/COOKIES/index.html">Home</a></li>
+        <li><a href="/COOKIES/shop.html" class="active">Shop</a></li>
+      </ul>
+    </nav>
+    <div id="user-section">
+      <span id="shop-user-name"></span>
+      <button id="shop-logout-btn" class="btn-small">Logout</button>
+    </div>
+    <div id="theme-toggle-container">
+      <button id="theme-toggle">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="shop-container">
+      <div class="products-section">
+        <h2>Products</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://pngimg.com/d/book_PNG2111.png" alt="Book" />
+            </div>
+            <h3>Book</h3>
+            <p>A great book for learning web development</p>
+            <p class="price">$19.99</p>
+            <button class="add-to-cart" data-product="Book" data-price="19.99" data-image="book-image.jpg">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://www.jbhifi.co.nz/cdn/shop/files/440540-Product-0-I-638518524634924032.jpg?v=1716262406" alt="Laptop" />
+            </div>
+            <h3>Laptop</h3>
+            <p>High-performance developer laptop</p>
+            <p class="price">$999.99</p>
+            <button class="add-to-cart" data-product="Laptop" data-price="999.99" data-image="laptop-image.jpg">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/api/placeholder/150/150" alt="Coffee Mug" />
+            </div>
+            <h3>Coffee Mug</h3>
+            <p>For those long coding sessions</p>
+            <p class="price">$12.99</p>
+            <button class="add-to-cart" data-product="Coffee Mug" data-price="12.99" data-image="mug-image.jpg">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://products.shureweb.eu/shure_product_db/product_main_images/files/c25/16a/40-/large_transparent/ce632827adec4e1842caa762f10e643d.png" alt="Headphones" />
+            </div>
+            <h3>Headphones</h3>
+            <p>Noise-cancelling for focused work</p>
+            <p class="price">$149.99</p>
+            <button class="add-to-cart" data-product="Headphones" data-price="149.99" data-image="headphones-image.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-section">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total">Total: $0.00</div>
+        <button id="checkout-btn" class="btn">Checkout</button>
+        <button id="clear-cart" class="btn btn-secondary">Clear Cart</button>
+      </div>
+      
+    </div>
+  </main>
+
+  <footer>
+    <p>Web Storage Implementation Demo</p>
+  </footer>
+
+  <div id="auth-check" class="hidden"></div>
+
+  <script src="/COOKIES/auth.js"></script>
+  <script src="/COOKIES/theme.js"></script>
+  <script src="/COOKIES/cart.js"></script>
+</body>
+</html>
