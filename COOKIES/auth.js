@@ -27,7 +27,39 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Setup tab switching functionality
   setupAuthTabs();
+
+  // Check for redirect parameters
+  checkRedirectParams();
 });
+
+// Check for redirection parameters in URL
+function checkRedirectParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  // Check if user just registered
+  if (urlParams.get('registered') === 'true') {
+    // Show success notification
+    showNotification('Account created successfully! Please log in.', 'info');
+    
+    // Ensure login tab is active
+    const loginTab = document.getElementById('login-tab');
+    const signupTab = document.getElementById('signup-tab');
+    const loginSection = document.getElementById('login-section');
+    const signupSection = document.getElementById('signup-section');
+    
+    if (loginTab && signupTab) {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginSection.classList.remove('hidden');
+      signupSection.classList.add('hidden');
+    }
+  }
+  
+  // Check if authentication is required
+  if (urlParams.get('authRequired') === 'true') {
+    showNotification('Please log in to access the shop', 'warning');
+  }
+}
 
 // Setup authentication tabs (login/signup)
 function setupAuthTabs() {
@@ -269,15 +301,17 @@ if (loginForm) {
       // Set auth cookie
       setAuthCookie(username);
       
-      // Update UI
-      checkAuthStatus();
-      
       // Generate new CSRF token for next action
       const newToken = generateCSRFToken();
       document.getElementById('csrf-token').value = newToken;
       sessionStorage.setItem('csrfToken', newToken);
       
-      showNotification('Login successful!');
+      showNotification('Login successful! Redirecting to shop...', 'info');
+      
+      // Redirect to shop page after successful login
+      setTimeout(() => {
+        window.location.href = 'shop.html';
+      }, 1500);
     } else {
       showNotification('Invalid username or password', 'warning');
     }
@@ -355,25 +389,12 @@ if (signupForm) {
     const saved = saveUser(userData);
     
     if (saved) {
-      // Auto-login the user
-      setAuthCookie(username);
-      
-      // Update UI
-      checkAuthStatus();
-      
-      // Generate new CSRF tokens
-      const newLoginToken = generateCSRFToken();
-      document.getElementById('csrf-token').value = newLoginToken;
-      sessionStorage.setItem('csrfToken', newLoginToken);
-      
-      const newSignupToken = generateCSRFToken();
-      document.getElementById('signup-csrf-token').value = newSignupToken;
-      sessionStorage.setItem('signupCsrfToken', newSignupToken);
-      
       // Reset form
       signupForm.reset();
       
-      showNotification('Account created successfully!');
+      // Instead of auto-login, redirect to login page with a parameter
+      // that indicates successful registration
+      window.location.href = 'index.html?registered=true';
     } else {
       showNotification('Error creating account. Please try again.', 'warning');
     }
@@ -398,14 +419,6 @@ if (shopLogoutBtn) {
     window.location.href = 'index.html';
   });
 }
-
-// Check for authentication required message
-document.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('authRequired') === 'true') {
-    showNotification('Please log in to access the shop', 'warning');
-  }
-});
 
 // Notification function (reused from cart.js)
 function showNotification(message, type = 'info') {
