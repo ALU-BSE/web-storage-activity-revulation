@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-  --primary-color: #4a90e2;
+  --primary-color: #4a91e2af;
   --secondary-color: #5cb85c;
   --accent-color: #f0ad4e;
   --text-color: #333;
@@ -74,17 +74,6 @@ main {
   margin-bottom: 5rem;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--header-bg);
-  color: var(--text-color);
-  border-top: 1px solid var(--border-color);
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
 /* Form Styles */
 .form-group {
   margin-bottom: 1rem;
@@ -106,7 +95,7 @@ input {
 
 .btn {
   background-color: var(--primary-color);
-  color: white;
+  color: rgb(71, 103, 163);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
@@ -133,6 +122,9 @@ input {
 .btn-small {
   padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  
 }
 
 /* Auth Container */
@@ -333,6 +325,13 @@ input.error {
   display: none;
 }
 
+.add-to-cart{
+  padding: 10px;
+  margin: 5px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   header {
@@ -348,4 +347,16 @@ input.error {
     position: static;
     margin-top: 2rem;
   }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--header-bg);
+  border-top: 1px solid var(--border-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-weight: bold;
 }
