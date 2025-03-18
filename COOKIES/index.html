@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-Commerce Demo - Login</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/web-storage-activity-revulation/COOKIES/style.css">
 </head>
 <body>
   <header>
@@ -16,6 +16,11 @@
 
   <main>
     <div class="auth-container">
+      <div class="auth-tabs">
+        <button id="login-tab" class="auth-tab active">Login</button>
+        <button id="signup-tab" class="auth-tab">Sign Up</button>
+      </div>
+
       <div id="login-section">
         <h2>Login</h2>
         <form id="login-form">
@@ -32,11 +37,35 @@
         </form>
       </div>
 
+      <div id="signup-section" class="hidden">
+        <h2>Create Account</h2>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" name="new-username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" name="new-password" minlength="6" required>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+          </div>
+          <input type="hidden" id="signup-csrf-token" name="signupCsrfToken">
+          <button type="submit" class="btn">Create Account</button>
+        </form>
+      </div>
+
       <div id="logged-in-section" class="hidden">
         <h2>Welcome, <span id="user-name"></span>!</h2>
         <p>You are now logged in.</p>
         <div class="button-container">
-          <a href="/web-storage-activity-revulation/COOKIES/shop.html" class="btn">Go to Shop</a>
+          <a href="shop.html" class="btn">Go to Shop</a>
           <button id="logout-btn" class="btn btn-secondary">Logout</button>
         </div>
       </div>
