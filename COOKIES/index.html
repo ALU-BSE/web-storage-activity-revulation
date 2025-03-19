@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REV Shop Demo - Login</title>
+  <link rel="stylesheet" href="/web-storage-activity-revulation/COOKIES/style.css">
+</head>
+<body>
+  <header>
+    <h1>REV SHOP</h1>
+    <div id="theme-toggle-container">
+      <button id="theme-toggle">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="auth-container">
+      <div class="auth-tabs">
+        <button id="login-tab" class="auth-tab active">Sign In</button>
+        <button id="signup-tab" class="auth-tab">Sign Up</button>
+      </div>
+
+      <div id="login-section">
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <input type="hidden" id="csrf-token" name="csrfToken">
+          <button type="submit" class="btn">Login</button>
+        </form>
+      </div>
+
+      <div id="signup-section" class="hidden">
+        <h2>Create Account</h2>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" name="new-username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" name="new-password" minlength="6" required>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+          </div>
+          <input type="hidden" id="signup-csrf-token" name="signupCsrfToken">
+          <button type="submit" class="btn">Create Account</button>
+        </form>
+      </div>
+
+      <div id="logged-in-section" class="hidden">
+        <h2>Welcome, <span id="user-name"></span>!</h2>
+        <p>You are now logged in.</p>
+        <div class="button-container">
+          <a href="shop.html" class="btn">Go to Shop</a>
+          <button id="logout-btn" class="btn btn-secondary">Log out</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>@2025. SMART SHOP All your desire met here </p>
+  </footer>
+
+  <script src="/web-storage-activity-revulation/COOKIES/auth.js"></script>
+  <script src="/web-storage-activity-revulation/COOKIES/theme.js"></script>
+</body>
+</html>
