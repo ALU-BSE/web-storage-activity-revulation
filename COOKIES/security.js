@@ -1,4 +1,3 @@
-// Task 4: Security Implementation
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize CSRF protection for all forms
     initializeCsrfProtection();
@@ -89,13 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Example of secure data encryption for sensitive data
   function encryptSensitiveData(data) {
     // In a real app, use a proper encryption library like CryptoJS
-    // This is a simple obfuscation for demonstration purposes only
     const encoded = btoa(data);
     return encoded;
   }
   
   function decryptSensitiveData(encryptedData) {
-    // Simple decoding for demonstration
+
     try {
       const decoded = atob(encryptedData);
       return decoded;
@@ -109,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function storeUserEmail(email) {
     if (!email) return;
     
-    // Encrypt before storing
     const encrypted = encryptSensitiveData(email);
     localStorage.setItem('userEmail', encrypted);
   }
@@ -118,6 +115,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const encrypted = localStorage.getItem('userEmail');
     if (!encrypted) return null;
     
-    // Decrypt when retrieving
     return decryptSensitiveData(encrypted);
   }
