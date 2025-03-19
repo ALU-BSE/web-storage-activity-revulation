@@ -329,7 +329,7 @@ input.error {
   padding: 10px;
   margin: 5px;
   background-color: var(--primary-color);
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 /* Responsive adjustments */
