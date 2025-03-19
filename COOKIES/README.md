@@ -2,12 +2,12 @@
 
 
 
-#  Smart Shop - Web Storage Demo
+#  REV Shop - Web Storage Demo
 
 
 
 ##  Description
-Smart Shop is a simple e-commerce app showcasing **Cookies**, **Local Storage**, and **Session Storage** for user authentication, theme preference, cart functionality, and basic security.
+REV Shop is a simple e-commerce app showcasing **Cookies**, **Local Storage**, and **Session Storage** for user authentication, theme preference, cart functionality, and basic security.
 
  **Folder:** `COOKIES/`  
  **Repo:** [GitHub](https://github.com/ALU-BSE/web-storage-activity-revulation.git)
