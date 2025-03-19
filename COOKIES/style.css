@@ -351,12 +351,16 @@ input.error {
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem; /* Reduce padding */
   background-color: var(--primary-color);
   color: var(--header-bg);
   border-top: 1px solid var(--border-color);
   position: fixed;
   bottom: 0;
   width: 100%;
-  font-weight: bold;
+  font-size: 0.8rem; /* Make text smaller */
+  font-weight: normal; /* Reduce font weight if needed */
+  height: 40px; /* Set a specific height */
+  line-height: 40px; /* Center text vertically */
 }
+
