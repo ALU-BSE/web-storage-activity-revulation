@@ -3,7 +3,7 @@
 **Group Activity: Implementing Web Storage Mechanisms in an E-Commerce Site**  
 *Objective:* Apply knowledge of Cookies, Local Storage, and Session Storage to build a secure and functional e-commerce demo.  
 
----
+--
 
 ### **Task 1: User Authentication with Cookies**  
 **Scenario:** Implement a login system using cookies to retain user sessions.  
