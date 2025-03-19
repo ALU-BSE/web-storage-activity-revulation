@@ -1,8 +1,8 @@
-Here’s a **shortened version** with only essential details, unnecessary parts removed:
 
----
 
-# 🛒 Smart Shop - Web Storage Demo
+
+
+#  Smart Shop - Web Storage Demo
 
 
 
